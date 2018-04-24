@@ -18,7 +18,7 @@ public class TestVetting
     Scanner scn = new Scanner(System.in);
 
     protected static int numStudents;
-    protected static int[][] rates;
+    protected int[][] rates;
     private Connection connection;
 
     public void run() throws Exception
@@ -183,7 +183,7 @@ public class TestVetting
     //calls methods that process and display output
     private void show()
     {
-        Vetting vet = new Vetting();
+        Vetting vet = new Vetting(rates,"Michael");
         vet.outputRates();
         vet.processRates();
         outPutTable();

@@ -7,7 +7,7 @@ package lecturerratings;
 
 import java.util.Arrays;
 import static lecturerratings.TestVetting.numStudents;
-import static lecturerratings.TestVetting.rates;
+//import static lecturerratings.TestVetting.rates;
 
 /**
  *
@@ -15,7 +15,15 @@ import static lecturerratings.TestVetting.rates;
  */
 public class Vetting
 {
+    public Vetting(int[][] rates,String name)
+    {
+        this.rates = rates;
+        this.name = name;
+    }
+    int[][] rates;
+    String name;
 
+    
     //stores, increments and prints out the frequency of each
     //rate in the rates array.
     private void rateFrequency()
