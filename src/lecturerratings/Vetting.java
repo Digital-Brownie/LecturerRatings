@@ -15,7 +15,8 @@ import static lecturerratings.TestVetting.numStudents;
  */
 public class Vetting
 {
-    public Vetting(int[][] rates,String name)
+
+    public Vetting(int[][] rates, String name)
     {
         this.rates = rates;
         this.name = name;
@@ -23,66 +24,24 @@ public class Vetting
     int[][] rates;
     String name;
 
-    
     //stores, increments and prints out the frequency of each
     //rate in the rates array.
     private void rateFrequency()
     {
-        int[] frequency = new int[11];
+        String[] frequency = new String[]{"","","","","","","","","","",""};
         for (int i = 0; i < numStudents; i++)
         {
             for (int j = 0; j < 5; j++)
             {
-                switch (rates[i][j])
-                {
-                    case 0:
-                        frequency[0]++;
-                        break;
-                    case 1:
-                        frequency[1]++;
-                        break;
-                    case 2:
-                        frequency[2]++;
-                        break;
-                    case 3:
-                        frequency[3]++;
-                        break;
-                    case 4:
-                        frequency[4]++;
-                        break;
-                    case 5:
-                        frequency[5]++;
-                        break;
-                    case 6:
-                        frequency[6]++;
-                        break;
-                    case 7:
-                        frequency[7]++;
-                        break;
-                    case 8:
-                        frequency[8]++;
-                        break;
-                    case 9:
-                        frequency[9]++;
-                        break;
-                    case 10:
-                        frequency[10]++;
-                        break;
-
-                    default:
-                        throw new AssertionError();
-                }
+                int rating = rates[i][j];
+                frequency[rating] += "*";
             }
         }
         System.out.println("Overall Rate Distribution:");
         for (int i = 0; i < 11; i++)
         {
             System.out.printf("%d: ", i);
-            for (int j = 0; j < frequency[i]; j++)
-            {
-                System.out.print("*");
-            }
-            System.out.println("");
+            System.out.println(frequency[i]);       
         }
     }
 
